@@ -3,6 +3,5 @@
 !/.emacs.d/
 /.emacs.d/*
 !/.emacs.d/init.org
-!/.emacs.d/abbrev_defs
 !/.emacs.d/snippets/
 
