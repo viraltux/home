@@ -1,0 +1,14 @@
+#name : FUNC <- function(...) { ... }
+#key : function
+# --
+${1:name} <- function(${2:args}) {
+## Description for the function
+##
+## Args:
+##   ${3:argument}: ${4:Description of argument}
+##
+## Returns:
+##   ${5:Description of returned values}
+
+$> $0
+}
