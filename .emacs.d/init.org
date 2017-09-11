@@ -5,15 +5,13 @@
   Check for more seetings in: http://www.i3s.unice.fr/~malapert/org/tips/emacs_orgmode.html
   
 ** .emacs main content
-   a soft linked copy of the .emacs file should be place in the home directory =~= with =cp -as ~/Dropbox/.emacs ~=
-   
-   The .emacs file will trigger the load and conversion of the init.org file and should contain the following lines in the begginning.
+   The .emacs file at ~ will trigger the load and conversion of the init.org file and should contain the code below in the begginning.
    Further lines will be added automatically by other packages.
 
    #+BEGIN_SRC 
    (package-initialize)
 
-   (setq user-emacs-directory (expand-file-name "~/Dropbox/.emacs.d/"))
+   (setq user-emacs-directory (expand-file-name "~/.emacs.d/"))
 
    (require 'org)
    (org-babel-load-file (expand-file-name (concat user-emacs-directory "init.org")))
