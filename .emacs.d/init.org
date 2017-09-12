@@ -83,8 +83,8 @@
  "spanish-prefix-quote" "Spanish" "ES>" t
  "Spanish (Español) input method with prefix modifiers. 
   
-  This is a modification of the default spanish-prefix input method
-  where the ~ has no role and is replaced by ' instead.
+  This is a modification and expansion of the default spanish-prefix 
+  input method where the ~ has no role and is replaced by ' instead.
   
   Also, the guillemets or 'comillas latinas' have as a prefix
   the < and > symbols.
@@ -100,6 +100,8 @@
      diéresis   |   \"    | \"u -> ü
        eñe      |   \\='    | \\='n -> ñ
     guillemets  | < or > | >> -> »  << -> «   
+    guillemets  | < or > | >> -> »  << -> «   
+ raya (em dash) |   -    | -- -> —
 " nil t nil nil nil nil nil nil nil nil t)
 
 (quail-define-rules
@@ -125,6 +127,8 @@
  ("< " ?<)
  ("'!" ?¡)
  ("'?" ?¿)
+ ("--" ?—)
+ ("- " ?-)
  )
 
 #+END_SRC
