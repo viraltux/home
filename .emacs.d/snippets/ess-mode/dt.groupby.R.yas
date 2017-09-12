@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dt.groupby
+# key: dt.groupby
+# --
+${1:DT}[,.(${2:x}, ${3:y.category} = ${4:category.fun}(${4:y}), Count = .N, ${5:z.agregated} = ${6:agregation.func}(${7:z}),
+$> by=.(${2:x}, ${3:y.category}, ${3:y.category})]

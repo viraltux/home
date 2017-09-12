@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: dbi
+# key: dbi
+# --
+con <- DBI::dbConnect(RPostgreSQL::PostgreSQL(), user = 'postgres', password = '${1:password}', dbname = 'postgres')
+query <- "SELECT ${2:columns} FROM ${3:table} WHERE ${4:conditions}"
+res <- DBI::dbSendQuery(con, query)
+query.res <- DBI::fetch(res, n = -1)
+summary(query.res)
