@@ -2,5 +2,6 @@
 # name: dt.groupby
 # key: dt.groupby
 # --
-${1:DT}[,.(${2:x}, ${3:y.category} = ${4:category.fun}(${4:y}), Count = .N, ${5:z.agregated} = ${6:agregation.func}(${7:z}),
-$> by=.(${2:x}, ${3:y.category}, ${3:y.category})]
+${1:DT} = data.table::as.data.table($1)
+$1[,.(Count = .N, ${6:z.agregated} = ${7:agregation.func}(${8:z})),
+$> by=.(${2:x}, ${3:y.category} = ${4:category.fun}(${5:y}))]
