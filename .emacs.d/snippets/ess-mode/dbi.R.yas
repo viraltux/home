@@ -3,7 +3,10 @@
 # key: dbi
 # --
 con <- DBI::dbConnect(RPostgreSQL::PostgreSQL(), user = 'postgres', password = '${1:password}', dbname = 'postgres')
-query <- "SELECT ${2:columns} FROM ${3:table} WHERE ${4:conditions}"
+query <- "SELECT table_name 
+          FROM information_schema.tables 
+          WHERE table_type = 'BASE TABLE' 
+          AND table_schema NOT IN ('pg_catalog', 'information_schema');"
 res <- DBI::dbSendQuery(con, query)
 query.res <- DBI::fetch(res, n = -1)
-summary(query.res)
+$0 head(query.res)
