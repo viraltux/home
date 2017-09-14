@@ -260,7 +260,7 @@
 	    "* %?\n  %U\n %i\n  %a")
 	    ("y" "Philosophy" entry (file "philosophy.org")
 	    "* %?\n  %U\n %i\n")
-	    ("p" "proyecto" entry (file+headline "proyecto.org.gpg" "Diario")
+	    ("p" "Proyecto" plain (file+headline "proyecto.org.gpg" "Diario")
 	    "    %?\n    %U\n" :empty-lines 1)
 	    ("l" "Template for literature")
 	    ("ln" "Novel" entry (file+headline "literature.org" "Novel")
