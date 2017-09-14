@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: if ; elif ; else
+# key: if
+# --
+if ${1:command} ; then
+$> ${2:expressions}
+elif ${3:command} ; then
+$> ${4:expressions}
+else
+$> ${5:expressions}
+fi
+
+$0
