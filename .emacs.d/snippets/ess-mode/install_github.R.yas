@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: install_github
+# key: install_github
+# --
+httr::set_config(httr::use_proxy(url="http://${1:proxy.name.com}", port=${2:8080}))
+devtools::install_github('${3:user}/${4:packcage}', subdir = '${5:NULL}')
+$0
+

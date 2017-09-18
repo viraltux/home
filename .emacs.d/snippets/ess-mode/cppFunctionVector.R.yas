@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: cppFunctionVector
+# key: cppFunctionVector
+# --
+Rcpp::cppFunction('
+double ${1:dotProduct}(NumericVector x, NumericVector y) {
+  int n = x.size();
+  double dp = 0;
+  for(int i = 0; i < n; ++i) {
+    dp += x[i]*y[i];
+  }
+  return dp;
+}')
