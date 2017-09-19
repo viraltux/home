@@ -102,6 +102,7 @@
     guillemets  | < or > | >> -> »  << -> «   
     guillemets  | < or > | >> -> »  << -> «   
  raya (em dash) |   -    | -- -> —
+
 " nil t nil nil nil nil nil nil nil nil t)
 
 (quail-define-rules
