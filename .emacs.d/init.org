@@ -133,6 +133,12 @@
  )
 
 #+END_SRC
+*** Spelling
+    Placing =-*- ispell-local-dictionary: "spanish" -*-= at the beggining of the file loads the aspell dictionary to be used by flyspell.
+#+BEGIN_SRC emacs-lisp
+    (add-hook 'org-mode-hook 'turn-on-flyspell)
+#+END_SRC
+
 *** Other
 #+BEGIN_SRC emacs-lisp
 ;;  Marking Mispellings
