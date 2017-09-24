@@ -267,7 +267,7 @@
 	    ("a" "Personal" entry (file "personal.org")
 	    "* %?\n  %U\n %i\n  %a")
 	    ("s" "Science" entry (file "science.org")
-	    "* %?\n  %U\n %i\n  %a")
+	    "* IDEA [#A] %?\n  %U\n %i\n  %a")
 	    ("y" "Philosophy" entry (file "philosophy.org")
 	    "* %?\n  %U\n %i\n")
 	    ("p" "Proyecto" plain (file+headline "proyecto.org.gpg" "Diario")
