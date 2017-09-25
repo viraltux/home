@@ -248,7 +248,7 @@
    (setq org-capture-templates
 	 '(
 	   ("t" "Todo" entry (file+headline "agenda.org" "Tasks")
-	    "* TODO %?\n  %i\n  %a")
+	    "* TODO [#A] %?\n  %i\n  %a")
 	   ("c" "Calendar" entry (file+headline "agenda.org" "Calendar")
 	    "* %?\n  %T\n %i\n %A")
 	   ("r" "Random" entry (file "random.org")
