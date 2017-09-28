@@ -369,7 +369,6 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
   (setq org2blog/wp-blog-alist
       `(("wordpress"
          :url "https://aleadeum.wordpress.com/xmlrpc.php"
-	 :username "viraltux@gmail.com"
          ;; :username ,(car (auth-source-user-and-password "aleadeum"))
 	 ;; :password ,(cadr (auth-source-user-and-password "aleadeum"))
          :default-title "Title"
