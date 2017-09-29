@@ -439,39 +439,6 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
     ))
 #+END_SRC
 
-** fundamental-mode (ess-r-mode)
-define abbrev for specific major mode
-the first part of the name should be the value of the variable major-mode of that mode
-e.g. for go-mode, name should be go-mode-abbrev-table
-To find out about a mode a good way its to
-
-M-x add-mode-abbrev after selecting what we want to abbreviate
-and check with M-x list-abbrevs what mode was used to store the abbreviation.
-
-#+BEGIN_SRC emacs-lisp
-(define-abbrev-table 'fundamental-mode-abbrev-table
-  '(
-
-("drawnorm"
-"mean=0; sd=1
-lb=-sd; ub=sd
-x <- seq(-4,4,length=100)*sd + mean
-hx <- dnorm(x,mean,sd)
-plot(x, hx, type='n', xlab='Values', ylab='',
-  main='Normal Distribution', axes=FALSE)
-i <- x >= lb & x <= ub
-lines(x, hx)
-polygon(c(lb,x[i],ub), c(0,hx[i],0), col='red')
-area <- pnorm(ub, mean, sd) - pnorm(lb, mean, sd)
-result <- paste('P(',lb,'< Values <',ub,') =',
-   signif(area, digits=3))
-mtext(result,3)
-axis(1, at=seq(40, 160, 20), pos=0)")
-
-))
-
-#+END_SRC
-
 * Company Mode
 #+BEGIN_SRC emacs-lisp
 
