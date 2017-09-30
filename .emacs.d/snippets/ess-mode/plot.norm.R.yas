@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# name: plot.norm
+# key: plot.norm
+# --
+## Normal Distribution Plot
+## from ${1:from} to ${2:to} with mu = ${3:mu} and sigma = ${4:sigma}
+## and a shaded probability area from ${5:p0} to ${6:p1}
+
+## mu and sigma
+mean=$3; sd=$4
+## Distribution support
+min = $1; max = $2
+## Probability area bounds
+lb=$5; ub=$6
+## Plot
+x <- seq(min,max,length=100)*sd + mean
+hx <- dnorm(x,mean,sd)
+plot(x, hx, type='n', xlab='Values', ylab='',
+main='Normal Distribution',
+axes=FALSE)
+i <- x >= lb & x <= ub
+lines(x, hx)
+polygon(c(lb,x[i],ub), c(0,hx[i],0), col='red')
+area <- pnorm(ub, mean, sd) - pnorm(lb, mean, sd)
+result <- paste('P(',lb,'< Values <',ub,') =', signif(area, digits=3))
+mtext(result,3)
+axis(1, at=seq(min(x), max(x), (max(x)-min(x))/10), pos=0)
