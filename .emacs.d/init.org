@@ -377,21 +377,18 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 
 #+END_SRC
 * Abbreviations
-#+BEGIN_SRC emacs-lisp
+  To allow global activation of abbreviations we could activate the following code, however the Emacs package Yasnippet is far superior to the default abbrev functionality in Emacs.
+
+#+BEGIN_SRC 
 ;; -*- coding: utf-8; lexical-binding: t; -*-
-;; sample use of abbrev
+
 (set-default 'abbrev-mode t)
 (setq save-abbrevs nil)
-#+END_SRC
-** global
 
-#+BEGIN_SRC emacs-lisp
 (clear-abbrev-table global-abbrev-table)
 (define-abbrev-table 'global-abbrev-table
   '(
 
-    ;; mathematics
-    ("+-" " ")
     ;; net abbrev
     ("afaik" "as far as i know" )
     ("atm" "at the moment" )
@@ -402,32 +399,6 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
     ("bc" "because" )
     ("bg" "background" )
     ("math" "mathematics" )
-
-    ;; computing
-    ("cs" "computer science" )
-
-    ;; tech company
-    ("macos" "Mac OS" )
-    ("msw" "Microsoft Windows" )
-
-    ;; programing
-    ("jvm" "Java Virtual Machine" )
-    ("gui" "graphical user interface" )
-    ("os" "operating system" )
-
-    ;; programing
-    ("utf8" "-*- coding: utf-8 -*-" )
-
-    ;; regex
-    ("rgx-az09" "/^([A-Za-z0-9]+)$/" )
-    ("rgx-ddmmyyy" "/^(0?[1-9]|[12][0-9]|3[01])([ \/\-])(0?[1-9]|1[012])\2([0-9][0-9][0-9][0-9])(([ -])([0-1]?[0-9]|2[0-3]):[0-5]?[0-9]:[0-5]?[0-9])?$/" )
-    ("rgx-24h" "/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/")
-    ("rgx-isodate" "/^(?![+-]?\d{4,5}-?(?:\d{2}|W\d{2})T)(?:|(\d{4}|[+-]\d{5})-?(?:|(0\d|1[0-2])(?:|-?([0-2]\d|3[0-1]))|([0-2]\d{2}|3[0-5]\d|36[0-6])|W([0-4]\d|5[0-3])(?:|-?([1-7])))(?:(?!\d)|T(?=\d)))(?:|([01]\d|2[0-4])(?:|:?([0-5]\d)(?:|:?([0-5]\d)(?:|\.(\d{3})))(?:|[zZ]|([+-](?:[01]\d|2[0-4]))(?:|:?([0-5]\d)))))$/")
-    ("rgx-email" "/^.+@.+$/")
-    ("rgx-url" "/^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/")
-    ("rgx-int" "/^-?\d+$/")
-    ("rgx-phone" "/^\+?(\d.*){3,}$/")
-    
 
     ;; unicode
     ("hearts" "♥💕💓💔💖💗💘💝💞💟💙💚💛💜" )
@@ -469,17 +440,42 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 * Yasnippet
   We need to add your own yasnippets for ESS/R for any yasnippet expansion to work. By default there are none. When typing rnorm(<TAB> the result we see has nothing to do with yasnippet, this is behavior that ESS provides to make your R-coding-life easier.
 
-We need to create your own snippets for R. You need to do this if the folder ess-mode in the [[/home/fran/Dropbox/.emacs.d/snippets][snippets directory]] or wherever your yasnippets are located (we'll have to create the ess-mode directory).
+  We need to create your own snippets for R. You need to do this if the folder ess-mode in the [[/home/fran/Dropbox/.emacs.d/snippets][snippets directory]] or wherever your yasnippets are located (we'll have to create the ess-mode directory).
 
-See more in https://joaotavora.github.io/yasnippet/snippet-development.html
+  See more in https://joaotavora.github.io/yasnippet/snippet-development.html
 
 #+BEGIN_SRC emacs-lisp
 
 (add-hook 'ess-mode-hook 'r-autoyas-ess-activate)
 (yas-global-mode 1)
 
+;; To allow for global activation of snippets
+(add-hook 'yas-minor-mode-hook 
+    (lambda ()
+    (yas-activate-extra-mode 'fundamental-mode)))
+
 #+END_SRC
 * Hacks
+** General
+*** Multilingual functionality for wiki-summary
+    1. Replace the function wiki-summary/make-api-query with 
+    #+BEGIN_SRC
+    ;;;multi-lingual version
+    ;;;###autoload
+    (defun wiki-summary/make-api-query (s)
+    "Given a wiki page title, generate the url for the API call
+    to get the page info"
+    (interactive)
+    (require 'ido)
+    (setq choices '(("English" . "en") ("Español" . "es") ("Français" . "fr")))
+    "Prompt user to pick a choice from a list."
+    (let ((pre (concat "https://" (cdr (assoc (ido-completing-read "Open bookmark:" choices) choices))  ".wikipedia.org/w/api.php?continue=&action=query&titles="))
+          (post "&prop=extracts&exintro=&explaintext=&format=json&redirects")
+	  (term (url-hexify-string (replace-regexp-in-string " " "_" s))))
+	  (concat pre term post)))
+    #+END_SRC
+    2. byte recompile the file wiki-summary.el
+
 ** Windows 7
 *** Emacs
 **** Version GNU Emacs 25.2.1 (x86_64-w64-mingw32)
