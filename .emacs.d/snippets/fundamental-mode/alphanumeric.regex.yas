@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: rgx.alphanumeric
+# key: rgx.alphanumeric
+# --
+/^([A-Za-z0-9]+)$/

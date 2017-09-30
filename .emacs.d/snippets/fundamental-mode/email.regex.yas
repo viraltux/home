@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: rgx.email
+# key: rgx.email
+# --
+/^.+@.+$/

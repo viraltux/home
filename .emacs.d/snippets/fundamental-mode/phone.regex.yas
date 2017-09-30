@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: rgx.phone
+# key: rgx.phone
+# --
+/^\+?(\d.*){3,}$/
