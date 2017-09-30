@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: function
+# key: function
+# --
+;; http://ergoemacs.org/emacs/elisp_basics.html
+(defun ${1:functionName} ()
+  "${2:One sentence summary of what this command do.}
+
+${3:More detailed documentation here.}"
+${4:;;}  (interactive)
+  (let (${5:localVar1} ${6:localVar2})
+    ${7:do something here}
+    ${8:last expression is returned}
+  )
+)
+$0

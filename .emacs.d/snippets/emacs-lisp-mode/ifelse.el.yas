@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: ifelse
+# key: ifelse
+# --
+(if ${1:test}
+    (progn ; true
+    	   ${2:true_body}
+    )
+    (progn ; else
+    	   ${3:false_body}
+    )
+)
+$0
