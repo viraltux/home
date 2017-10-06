@@ -259,7 +259,7 @@
    ;; ("l" "Log" plain (file+datetree "log.org")
    ;; "    %?\n    Anno Domini %(progn (require 'rst) (rst-arabic-to-roman %<%Y>)) %<%H:%M>\n" :empty-lines 1)
 
-   (unless (equal system-type '(windows-nt ms-dos))
+   (unless (memq system-type '(windows-nt ms-dos))
    (setq org-capture-templates 
      (append org-capture-templates '(
 	    ("j" "Journal" plain (file+datetree "journal.org.gpg")
@@ -280,7 +280,7 @@
    ))))
    
    ;; Work Captures
-   (when (equal system-type '(windows-nt ms-dos))
+   (when (memq system-type '(windows-nt ms-dos))
    (setq org-capture-templates 
      (append org-capture-templates '(
 	    ("p" "project" entry (file+datetree "project.org") 
@@ -343,6 +343,17 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
         '("P" "#+begin_src python :results output :session *python* :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
 #+END_SRC
 
+* Aspell
+#+BEGIN_SRC emacs-lisp
+;; Windows specific settings
+(when (memq system-type '(windows-nt ms-dos))
+  (progn 
+  (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin")
+  (setq ispell-program-name "aspell")
+  (setq ispell-personal-dictionary "~/.ispell")
+  (require 'ispell))
+)
+#+END_SRC
 * Helm
 #+BEGIN_SRC emacs-lisp
 (require 'helm)
@@ -480,8 +491,8 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 *** Emacs
 **** Version GNU Emacs 25.2.1 (x86_64-w64-mingw32)
       #+BEGIN_SRC emacs-lisp
-      (when (equal system-type '(windows-nt ms-dos))
-      (when (equal emacs-version "25.2.1")
+      (when (memq system-type '(windows-nt ms-dos))
+      (when (string= emacs-version "25.2.1")
 
       ;; Warning (python): Your python-shell-interpreter doesn’t seem... Removing aparently
       ;; useless warning using workaround https://github.com/syl20bnr/spacemacs/issues/8797
