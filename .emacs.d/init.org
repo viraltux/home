@@ -466,6 +466,18 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
     (yas-activate-extra-mode 'fundamental-mode)))
 
 #+END_SRC
+* Maxima
+  #+BEGIN_SRC emacs-lisp
+  ;;-- Maxima mode
+  (add-to-list 'load-path "/usr/share/maxima/5.37.2/emacs")
+  (autoload 'maxima-mode "maxima" "Maxima mode" t)
+  (autoload 'imaxima "imaxima" "Frontend for maxima with Image support" t)
+  (autoload 'maxima "maxima" "Maxima interaction" t)
+  (autoload 'imath-mode "imath" "Imath mode for math formula input" t)
+  (setq imaxima-use-maxima-mode-flag t)
+  (add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
+  #+END_SRC
+  
 * Hacks
 ** General
 *** Multilingual functionality for wiki-summary
