@@ -1,3 +1,4 @@
+
 * Emacs
   More interesting settings in http://mescal.imag.fr/membres/arnaud.legrand/misc/init.php and https://github.com/dz/dotfiles/tree/master/emacsd/configs
   Common problems with Emacs can be solve by removing the .elc (compiled files) and recompiling them with byte-recompile-directory. For just one file we can use byte-compile-file.
@@ -283,8 +284,8 @@
    (when (memq system-type '(windows-nt ms-dos))
    (setq org-capture-templates 
      (append org-capture-templates '(
-	    ("p" "project" entry (file+datetree "project.org") 
-	    "* %?\n  %U\n %i\n  %a")
+	    ("p" "project" plain (file+headline "project.org" "Log") 
+	    "    %?\n    %U\n %i\n  %a" :empty-lines 1)
 	    ("n" "NPSS" entry (file "npss.org")
 	    "* %?\n  %U\n %i\n  %a")
    ))))   
@@ -466,6 +467,32 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
     (yas-activate-extra-mode 'fundamental-mode)))
 
 #+END_SRC
+* ESS
+#+BEGIN_SRC emacs-lisp
+(add-hook 'ess-mode-hook
+          (lambda () 
+            (ess-toggle-underscore nil)))
+;; (eval-after-load  "ess-mode" '(ess-toggle-underscore nil))
+;; Turn off "smart underscore" ess feature
+;; (with-eval-after-load 'ess (setq ess-toggle-underscore nil))
+;;;; Map C-= to the assignment operator, and leaves _ alone:
+;; (add-hook 'ess-mode-hook
+;; 	  (lambda ()
+;; 	           (setq ess-S-assign-key (kbd "C-="))
+;; 	           (ess-toggle-S-assign-key t)     ; enable above key definition
+;; 		   (ess-toggle-underscore nil)
+;; 		   (ess-toggle-underscore nil)))   ; leave my underscore key alone!
+
+;; (add-hook 'inferior-ess-mode-hook
+;; 	  (lambda ()
+;; 	    (ess-toggle-underscore nil)
+;; 	           (setq ess-S-assign-key (kbd "C-="))
+;; 	           (ess-toggle-S-assign-key t)     ; enable above key definition
+;; 		   (ess-toggle-underscore nil)
+;; 		   (ess-toggle-underscore nil)))   ; leave my underscore key alone!
+
+#+END_SRC  
+
 * Hacks
 ** General
 *** Multilingual functionality for wiki-summary
