@@ -1,4 +1,3 @@
-
 * Emacs
   More interesting settings in http://mescal.imag.fr/membres/arnaud.legrand/misc/init.php and https://github.com/dz/dotfiles/tree/master/emacsd/configs
   Common problems with Emacs can be solve by removing the .elc (compiled files) and recompiling them with byte-recompile-directory. For just one file we can use byte-compile-file.
@@ -343,7 +342,22 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 
 (add-to-list 'org-structure-template-alist
 '("P" "#+begin_src python :results output :session *python* :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
+
 #+END_SRC
+
+*** Maxima
+
+#+BEGIN_SRC emacs-lisp
+;;-- Maxima mode
+(add-to-list 'load-path "/usr/share/maxima/5.37.2/emacs")
+(autoload 'maxima-mode "maxima" "Maxima mode" t)
+(autoload 'imaxima "imaxima" "Frontend for maxima with Image support" t)
+(autoload 'maxima "maxima" "Maxima interaction" t)
+(autoload 'imath-mode "imath" "Imath mode for math formula input" t)
+(setq imaxima-use-maxima-mode-flag t)
+(add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
+#+END_SRC
+    
 
 *** Maxima
 
@@ -482,7 +496,7 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
     (yas-activate-extra-mode 'fundamental-mode)))
 
 #+END_SRC
-<<<<<<< HEAD
+
 * ESS
 #+BEGIN_SRC emacs-lisp
 (add-hook 'ess-mode-hook
@@ -508,8 +522,7 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 ;; 		   (ess-toggle-underscore nil)))   ; leave my underscore key alone!
 
 #+END_SRC  
-=======
->>>>>>> a016c067753d54c9cfc0d6a5d08fb44491978e75
+
 
 * Hacks
 ** General
