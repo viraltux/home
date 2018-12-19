@@ -372,7 +372,6 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 (add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
 #+END_SRC
     
-
 * Aspell
 #+BEGIN_SRC emacs-lisp
 ;; Windows specific settings
@@ -523,7 +522,16 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 
 #+END_SRC  
 
+* Magit
+  A tutorial can be found [[https://magit.vc/screenshots/][here]]
 
+#+BEGIN_SRC emacs-lisp
+(setq magit-repository-directories
+      `(("~/"                               . 1)
+	("~/workspace/"                     . 3)
+        (,user-emacs-directory              . 2)))
+
+#+END_SRC
 * Hacks
 ** General
 *** Multilingual functionality for wiki-summary
