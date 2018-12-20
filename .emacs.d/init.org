@@ -522,6 +522,12 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 
 #+END_SRC  
 
+* Latex
+  Scaling latex formulas when visualized via C-cxl
+#+BEGIN_SRC 
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+#+END_SRC
+
 * Magit
   A tutorial can be found [[https://magit.vc/screenshots/][here]]
 
