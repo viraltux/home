@@ -531,6 +531,10 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 * Magit
   A tutorial can be found [[https://magit.vc/screenshots/][here]]
 
+  S stages all files
+  c c initiates a commit. Write the message and then press C-c C-c to actually create the commit.
+  P u pushes to the upstream branch. In the popup that appears after you have pressed P you can see the upstream. If the upstream is not set yet, then you can still use P u. You'll be asked for a branch which is then configured as the upstream before pushing.
+
 #+BEGIN_SRC emacs-lisp
 (setq magit-repository-directories
       `(("~/"                               . 1)
