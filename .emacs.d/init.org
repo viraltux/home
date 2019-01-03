@@ -204,7 +204,7 @@
    (cond
    ((string-equal system-type "windows-nt") (progn (setq org-directory "~/workspace/org")))
    ((string-equal system-type "darwin") (progn (message "Set org-directory for Mac OS X")))
-   ((string-equal system-type "gnu/linux") (progn (setq org-directory "~/Dropbox/workspace/org"))))
+   ((string-equal system-type "gnu/linux") (progn (setq org-directory "~/workspace/org"))))
 
    (add-hook 'org-mode-hook (global-visual-line-mode t))
   #+END_SRC
@@ -241,7 +241,7 @@
 
    ;; (defun fran-update-agenda ()
    ;;   (interactive)
-   ;;   (shell-command "cd ~/Dropbox/workspace/org/sync; mv ../agenda.ics .; git commit -a -m 'update'; git push"))
+   ;;   (shell-command "cd ~/workspace/org/sync; mv ../agenda.ics .; git commit -a -m 'update'; git push"))
    ;; (global-set-key (kbd "C-c f") 'fran-update-agenda)  
    #+END_SRC
 
@@ -535,9 +535,10 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 
   A tutorial can be found [[https://magit.vc/screenshots/][here]]
 
-  S stages all files
-  c c initiates a commit. Write the message and then press C-c C-c to actually create the commit.
-  P u pushes to the upstream branch. In the popup that appears after you have pressed P you can see the upstream. If the upstream is not set yet, then you can still use P u. You'll be asked for a branch which is then configured as the upstream before pushing.
+  Execute magit-status or C-x q then:
+  - S stages all files
+  - c c initiates a commit. Write the message and then press C-c C-c to actually create the commit.
+  - P u pushes to the upstream branch. In the popup that appears after you have pressed P you can see the upstream. If the upstream is not set yet, then you can still use P u. You'll be asked for a branch which is then configured as the upstream before pushing.
 
 #+BEGIN_SRC emacs-lisp
 (setq magit-repository-directories
