@@ -247,50 +247,25 @@
 
 ** Captures
    #+BEGIN_SRC emacs-lisp
-   ;; Global captures
+   ;; Personal Captures
+   ;; ("l" "Log" plain (file+datetree "log.org")
+   ;; "    %?\n    Anno Domini %(progn (require 'rst) (rst-arabic-to-roman %<%Y>)) %<%H:%M>\n" :empty-lines 1)
+
    (setq org-capture-templates
 	 '(
-	   ("t" "Todo" entry (file+headline "agenda.org" "Tasks")
+ 	   ("t" "Todo" entry (file+headline "agenda.org" "Tasks")
 	    "* TODO [#A] %?\n  %i\n  %a")
 	   ("c" "Calendar" entry (file+headline "agenda.org" "Calendar")
 	    "* %?\n  %T\n %i\n %A")
 	   ("r" "Random" entry (file "random.org")
 	    "* %?\n  %U\n %i\n  %a")
-   ))
-
-   ;; Personal Captures
-   ;; ("l" "Log" plain (file+datetree "log.org")
-   ;; "    %?\n    Anno Domini %(progn (require 'rst) (rst-arabic-to-roman %<%Y>)) %<%H:%M>\n" :empty-lines 1)
-
-   (unless (memq system-type '(windows-nt ms-dos))
-   (setq org-capture-templates 
-     (append org-capture-templates '(
-	    ("j" "Journal" plain (file+datetree "journal.org.gpg")
+	   ("j" "Journal" plain (file+datetree "journal.gpg")
 	    "    %?\n    %U\n" :empty-lines 1)
-	    ("a" "Personal" entry (file "personal.org")
-	    "* %?\n  %U\n %i\n  %a")
-	    ("s" "Science" entry (file "science.org")
+	   ("i" "Ideas" entry (file "ideas.org")
 	    "* IDEA [#A] %?\n  %U\n %i\n  %a")
-	    ("y" "Philosophy" entry (file "philosophy.org")
-	    "* %?\n  %U\n %i\n")
-	    ("p" "Proyecto" plain (file+headline "proyecto.org.gpg" "Diario")
+	   ("p" "Proyecto" plain (file+headline "proyecto.org.gpg" "Diario")
 	    "    %?\n    %U\n" :empty-lines 1)
-	    ("l" "Template for literature")
-	    ("ln" "Novel" entry (file+headline "literature.org" "Novel")
-	    "* %?\n  %U\n %i\n")
-	    ("lp" "Poem" entry (file+headline "literature.org" "Poetry")
-	    "* %?\n  %U\n %i\n")
-   ))))
-   
-   ;; Work Captures
-   (when (memq system-type '(windows-nt ms-dos))
-   (setq org-capture-templates 
-     (append org-capture-templates '(
-	    ("p" "project" plain (file+headline "project.org" "Log") 
-	    "    %?\n    %U\n %i\n  %a" :empty-lines 1)
-	    ("n" "NPSS" entry (file "npss.org")
-	    "* %?\n  %U\n %i\n  %a")
-   ))))   
+   ))
    #+END_SRC
 
 ** Programming Languages 
