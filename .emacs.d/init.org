@@ -57,8 +57,10 @@
 
 ;; graphical mode vs terminal mode settings
 (unless (display-graphic-p) (menu-bar-mode -1))
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
+(if (display-graphic-p)
+    (progn
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)))
 
 (when (display-graphic-p) 
       (setq frame-title-format
