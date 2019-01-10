@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.qnorm
+# key: qnorm
+# --
+sps.norm.ppf($1,0,1)
+$0

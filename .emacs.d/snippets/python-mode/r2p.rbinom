@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.rbinom
+# key: rbinom
+# --
+sp.random.binomial(1,0.5,$1)
+$0

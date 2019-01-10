@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.dnorm
+# key: dnorm
+# --
+sps.norm.pdf($1,0,1)
+$0

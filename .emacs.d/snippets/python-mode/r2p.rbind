@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.rbind
+# key: rbind
+# --
+sp.row_stack(($1))
+$0

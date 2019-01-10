@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.set.seed
+# key: set.seed
+# --
+np.random.seed($1)
+$0
