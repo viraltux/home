@@ -570,7 +570,6 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 
        #+END_SRC
 
-    #+END_SRC
     2. byte recompile the file wiki-summary.el
 
 ** Windows 7
