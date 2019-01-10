@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.rpois
+# key: rpois
+# --
+sp.random.poisson(1,$1)
+$0

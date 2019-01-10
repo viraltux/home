@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.rexp
+# key: rexp
+# --
+sp.random.exponential(1,$1)
+$0

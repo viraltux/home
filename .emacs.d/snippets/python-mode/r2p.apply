@@ -7,4 +7,3 @@ def f(x):
 
 np.vectorize(f)($2)
 $0
-
