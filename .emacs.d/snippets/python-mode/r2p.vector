@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.vector
+# key: c
+# --
+np.array([$0])

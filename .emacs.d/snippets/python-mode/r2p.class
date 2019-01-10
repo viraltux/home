@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.class
+# key: class
+# --
+type($0)
