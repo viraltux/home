@@ -539,21 +539,37 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 * Hacks
 ** General
 *** Multilingual functionality for wiki-summary
+
+    In the file wiki-summary.el do the following:
+    
+    0. Comment out the "defcustom wiki-summary-language-string" like this:
+       #+BEGIN_SRC 
+;; (defcustom wiki-summary-language-string "en"
+;;  "Language string for the API URL call, i.e.: 'en', 'fr', etc.")
+       #+END_SRC
     1. Replace the function wiki-summary/make-api-query with 
-    #+BEGIN_SRC
-    ;;;multi-lingual version
-    ;;;###autoload
-    (defun wiki-summary/make-api-query (s)
-    "Given a wiki page title, generate the url for the API call
-    to get the page info"
-    (interactive)
-    (require 'ido)
-    (setq choices '(("English" . "en") ("Español" . "es") ("Français" . "fr")))
-    "Prompt user to pick a choice from a list."
-    (let ((pre (concat "https://" (cdr (assoc (ido-completing-read "Open bookmark:" choices) choices))  ".wikipedia.org/w/api.php?continue=&action=query&titles="))
-          (post "&prop=extracts&exintro=&explaintext=&format=json&redirects")
-	  (term (url-hexify-string (replace-regexp-in-string " " "_" s))))
-	  (concat pre term post)))
+       #+BEGIN_SRC 
+;;;multi-lingual version
+;;;###autoload
+(defun wiki-summary/make-api-query (s)
+  "Given a wiki page title, generate the url for the API call
+   to get the page info"
+
+  (interactive)
+  (require 'ido)
+  (setq choices '(("English" . "en") ("Español" . "es") ("Français" . "fr")))
+
+  "Prompt user to pick a choice from a list."
+  (setq wiki-summary-language-string
+	(cdr (assoc (ido-completing-read "Choose language:" choices) choices)))
+  
+  (let ((pre (format wiki--pre-url-format-string wiki-summary-language-string))
+        (post wiki--post-url-format-string)
+        (term (url-hexify-string (replace-regexp-in-string " " "_" s))))
+    (concat pre term post)))
+
+       #+END_SRC
+
     #+END_SRC
     2. byte recompile the file wiki-summary.el
 
