@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: r2p.library
+# key: library
+# --
+import pandas as pd
+import numpy as np
+import scipy as sp
+import scipy.stats as sps
+import scipy.optimize as opt
+import statsmodels as sm
+import statsmodels.formula.api as smf
+import matplotlib.pyplot as plt; plt.style.use('dark_background')
+
+$0
