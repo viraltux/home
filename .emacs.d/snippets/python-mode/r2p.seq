@@ -2,6 +2,5 @@
 # name: r2p.seq
 # key: seq
 # --
-np.arange($1,$2+$3,$3)
-np.linspace($1,$2,$3)
+np.arange($1,$2+$3,$3) #np.linspace($1,$2,$3)
 $0
