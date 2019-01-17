@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.rep
+# key: rep
+# --
+np.repeat($1,$2)
