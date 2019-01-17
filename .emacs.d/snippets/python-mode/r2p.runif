@@ -3,4 +3,3 @@
 # key: runif
 # --
 sp.random.uniform(0,1,$1)
-$0

@@ -3,4 +3,3 @@
 # key: seq
 # --
 np.arange($1,$2+$3,$3) #np.linspace($1,$2,$3)
-$0

@@ -3,4 +3,3 @@
 # key: cbind
 # --
 np.column_stack(($1))
-$0
