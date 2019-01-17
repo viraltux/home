@@ -3,4 +3,3 @@
 # key: dnorm
 # --
 sps.norm.pdf($1,0,1)
-$0

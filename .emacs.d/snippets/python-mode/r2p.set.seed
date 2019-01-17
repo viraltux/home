@@ -3,4 +3,3 @@
 # key: set.seed
 # --
 np.random.seed($1)
-$0

@@ -3,4 +3,3 @@
 # key: class
 # --
 type($1)
-$0

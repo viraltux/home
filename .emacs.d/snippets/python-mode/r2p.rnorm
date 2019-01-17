@@ -3,4 +3,3 @@
 # key: rnorm
 # --
 sp.random.normal(0,1,$1)
-$0

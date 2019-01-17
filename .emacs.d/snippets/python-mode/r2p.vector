@@ -2,4 +2,4 @@
 # name: r2p.vector
 # key: c
 # --
-np.array([$0])
+np.array([$1])

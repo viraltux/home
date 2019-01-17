@@ -3,4 +3,3 @@
 # key: rbind
 # --
 sp.row_stack(($1))
-$0
