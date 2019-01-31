@@ -2,4 +2,4 @@
 # name: r2p.rbind
 # key: rbind
 # --
-sp.row_stack(($1))
+np.row_stack(($1))
