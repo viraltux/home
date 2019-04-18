@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.paste
+# key: paste
+# --
+np.core.defchararray.add($1, $2)

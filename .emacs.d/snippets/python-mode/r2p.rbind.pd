@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.rbind.pd
+# key: rbind.pd
+# --
+pd.concat([$1,$2],0)

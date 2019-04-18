@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.abline
+# key: abline
+# --
+plt.axvline(x=$1)$0
