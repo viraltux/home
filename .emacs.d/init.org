@@ -20,19 +20,27 @@
 ** Repositories
  Instructions at https://stable.melpa.org/#/getting-started
 
+
  #+BEGIN_SRC emacs-lisp
-(require 'package) ;; You might already have this line
+; list the packages you want
+(setq package-list '(use-package beacon company ess helm yasnippet magit))
 
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (url (concat (if no-ssl "http""https") "://melpa.org/packages/")))
-  (add-to-list 'package-archives (cons "melpa"url) t))
+; list the repositories containing them
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu". "http://elpa.gnu.org/packages/")))
+; activate all the packages (in particular autoloads)
+(package-initialize)
 
-(package-initialize) ;; You might already have this line
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
  #+END_SRC
 
 ** Visuals & Sound
