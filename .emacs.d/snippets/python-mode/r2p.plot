@@ -3,10 +3,10 @@
 # key: plot
 # --
 def plot(x,y):
-    plt.ion()
-    fig1, (a1, a2) = plt.subplots(nrows = 2, ncols = 1)
-    a1.scatter(x, y)
-    a2.hist(y)
+    plt.clf()
+    # plt.hist(y)
+    # plt.plot(x, y)
+    plt.scatter(x, y)
+    plt.show()
 
-plot($1,$2)
-$0
+plot($1,$2)$0

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: r2p.cbind
-# key: cbind
+# name: r2p.cbind.np
+# key: cbind.np
 # --
 np.column_stack(($1))

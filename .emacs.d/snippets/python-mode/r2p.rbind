@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: r2p.rbind
-# key: rbind
+# name: r2p.rbind.np
+# key: rbind.np
 # --
-sp.row_stack(($1))
+np.row_stack(($1))

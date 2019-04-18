@@ -9,6 +9,8 @@ import scipy.stats as sps
 import scipy.optimize as opt
 import statsmodels as sm
 import statsmodels.formula.api as smf
-import matplotlib.pyplot as plt; plt.style.use('dark_background')
+import matplotlib.pyplot as plt
+plt.style.use('dark_background')
+fig, (a1, a2) = plt.subplots(nrows = 2, ncols = 1)
 
 $0

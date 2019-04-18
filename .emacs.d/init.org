@@ -495,7 +495,9 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
   Variables defined in python.el and required to run anaconda's python
 
 #+BEGIN_SRC emacs-lisp
-(setq python-shell-interpreter "~/.conda/envs/fran-env/bin/python")
+(if (file-exists-p "~/anaconda3/bin/python")
+    (setq python-shell-interpreter "~/anaconda3/bin/python")
+    (setq python-shell-interpreter "~/.conda/envs/fran-env/bin/python"))
 ;;(setq python-shell-interpreter-args "-m IPython --simple-prompt -i")
 #+END_SRC
 
