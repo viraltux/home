@@ -508,7 +508,8 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 (if (file-exists-p "/databricks/conda/envs/databricks-ml-gpu/bin/python")
     (setq python-shell-interpreter "/databricks/conda/envs/databricks-ml-gpu/bin/python"))
 (if (file-exists-p "~/anaconda3/bin/python")
-    (setq python-shell-interpreter "~/anaconda3/bin/python")
+    (setq python-shell-interpreter "~/anaconda3/bin/python"))
+(if (file-exists-p "~/.conda/envs/fran-env/bin/python")
     (setq python-shell-interpreter "~/.conda/envs/fran-env/bin/python"))
 ;;(setq python-shell-interpreter-args "-m IPython --simple-prompt -i")
 #+END_SRC
