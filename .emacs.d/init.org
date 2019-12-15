@@ -29,9 +29,6 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
-; activate all the packages (in particular autoloads)
-(package-initialize)
-
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -40,6 +37,9 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+; activate all the packages (in particular autoloads)
+(package-initialize)
 
  #+END_SRC
 
