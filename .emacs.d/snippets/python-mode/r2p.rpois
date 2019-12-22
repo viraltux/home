@@ -2,4 +2,5 @@
 # name: r2p.rpois
 # key: rpois
 # --
-sp.random.poisson(1,$1)
+${1:x} = sp.random.poisson(${2:mean},${3:n})
+$0

@@ -2,4 +2,5 @@
 # name: r2p.dnorm
 # key: dnorm
 # --
-sps.norm.pdf($1,0,1)
+${1:dx} = sps.norm.pdf(${2:x},${3:mean},${4:sd})
+$0

@@ -2,4 +2,5 @@
 # name: r2p.runif
 # key: runif
 # --
-sp.random.uniform(0,1,$1)
+${1:x} = sp.random.uniform(0,1,${2:n})
+$0

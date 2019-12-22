@@ -2,4 +2,5 @@
 # name: r2p.pnorm
 # key: pnorm
 # --
-sps.norm.cdf($1,0,1)
+${1:px} = sps.norm.cdf(${2:q},${3:mean},${4:sd})
+$0

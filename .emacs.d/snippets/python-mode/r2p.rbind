@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: r2p.rbind.np
-# key: rbind.np
-# --
-np.row_stack(($1))

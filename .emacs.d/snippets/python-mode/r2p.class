@@ -2,4 +2,4 @@
 # name: r2p.class
 # key: class
 # --
-type($1)
+type($1)$0

@@ -2,4 +2,5 @@
 # name: r2p.qnorm
 # key: qnorm
 # --
-sps.norm.ppf($1,0,1)
+${1:qx} = sps.norm.ppf(${2:p},${3:mean},${4:sd})
+$0

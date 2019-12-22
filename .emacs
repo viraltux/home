@@ -11,7 +11,22 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit yasnippet use-package helm ess company beacon))))
+    (flymake ac-inf-ruby company-inf-ruby magit yasnippet helm ess company beacon use-package)))
+ '(safe-local-variable-values
+   (quote
+    ((eval switch-to-buffer "Chapters")
+     (eval clone-indirect-buffer "Chapters" nil)
+     (eval other-window 1)
+     (eval switch-to-buffer
+	   (Texto))
+     (eval switch-to-buffer
+	   ("Texto"))
+     (eval toggle-word-wrap)
+     (eval togle-truncate-lines)
+     (eval split-window-right 50)
+     (eval switch-to-buffer "Texto")
+     (eval clone-indirect-buffer "Texto" nil)
+     (eval find-file "chailatte.org")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

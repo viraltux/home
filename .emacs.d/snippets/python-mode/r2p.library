@@ -7,10 +7,10 @@ import numpy as np
 import scipy as sp
 import scipy.stats as sps
 import scipy.optimize as opt
-import statsmodels as sm
-import statsmodels.formula.api as smf
+import statsmodels.api as sm
+import statsmodels.formula.api as smf	
+import statsmodels.tsa.api as tsa
 import matplotlib.pyplot as plt
 plt.style.use('dark_background')
-fig, (a1, a2) = plt.subplots(nrows = 2, ncols = 1)
 
 $0

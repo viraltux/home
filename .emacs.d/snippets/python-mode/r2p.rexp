@@ -2,4 +2,5 @@
 # name: r2p.rexp
 # key: rexp
 # --
-sp.random.exponential(1,$1)
+${1:x} = sp.random.exponential(${2:mean},${3:n})
+$0

@@ -2,4 +2,5 @@
 # name: r2p.rep
 # key: rep
 # --
-np.repeat($1,$2)
+${1:rx} = np.repeat(${2:x},${3:n})
+$0

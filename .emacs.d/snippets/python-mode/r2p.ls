@@ -2,4 +2,5 @@
 # name: r2p.ls
 # key: ls
 # --
-dir()
+${1:d} = dir()
+$0

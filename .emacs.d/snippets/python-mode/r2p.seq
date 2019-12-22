@@ -2,4 +2,6 @@
 # name: r2p.seq
 # key: seq
 # --
-np.arange($1,$2+$3,$3) #np.linspace($1,$2,$3)
+${1:idx} = np.arange(${2:from},${3:to}+1,${4:by})
+$1 = np.linspace($2,$3,${5:length.out})
+$0
