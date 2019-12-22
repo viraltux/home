@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.sample
+# key: sample
+# --
+${1:x} = np.random.choice(range(${2:min}, ${3:max}+1), size=$3, replace=${4:False}, p=${5:None})
+$0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.diag
+# key: diag
+# --
+np.identity(${1:n})
+$0

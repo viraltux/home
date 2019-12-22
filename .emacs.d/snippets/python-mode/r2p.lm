@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: r2p.lm
+# key: lm
+# --
+${1:model} = smf.ols('${2:y~x1+x2:sp.sin(x3)+C(v)-1}',data=${3:X}).fit()
+$0
+

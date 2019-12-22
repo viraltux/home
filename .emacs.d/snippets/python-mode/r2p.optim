@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: r2p.optim
+# key: optim
+# --
+def f(x):
+    fx = ${1:np.array([])}
+    return fx
+x0 = np.array([$2])
+res = opt.minimize(f, x0, method='nelder-mead', options={'xatol': 1e-8, 'disp': True})
+$0

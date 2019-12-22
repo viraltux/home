@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: r2p.kmeans
+# key: kmeans
+# --
+from sklearn.cluster import KMeans
+${1:model} = KMeans(n_clusters=${2:2}, random_state=${3:0}).fit(X)
+$0

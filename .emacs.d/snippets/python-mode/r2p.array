@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: r2p.array
+# key: array
+# --
+${1:X} = np.zeros((${2:shape}))
+$1 = np.empty(($2))
+$1 = np.full(($2),${3:value})
+$0

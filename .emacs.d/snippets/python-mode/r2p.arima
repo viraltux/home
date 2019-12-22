@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.arima
+# key: arima
+# --
+${1:model} = tsa.ARIMA(${2:endog}, order=$(${3:p,d,q}), exog=${4:None}, dates=${5:None}, freq=${6:None}, missing='${7:none}').fit(trend='${8:nc}', disp=${9:-1})
+$0

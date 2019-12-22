@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: r2p.Vectorize
+# key: Vectorize
+# --
+def f(x):
+    return $1
+
+np.vectorize(f)($2)
+$0
