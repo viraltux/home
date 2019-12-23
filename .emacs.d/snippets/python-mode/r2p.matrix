@@ -2,5 +2,5 @@
 # name: r2p.matrix
 # key: matrix
 # --
-${1:numpy.ndarray}.reshape(${2:nrow},${3:ncol})
+${1:[numpy.ndarray]}.reshape(${2:nrow},${3:ncol})
 $0

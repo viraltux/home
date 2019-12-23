@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2p.table
+# key: table
+# --
+${1:t} = ${2:pd}.crosstab(${3:x},${4:y})
+$0
