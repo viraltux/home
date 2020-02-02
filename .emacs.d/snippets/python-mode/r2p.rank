@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.rank
+# key: r2p
+# --
+sps.rankdata(${1:x})$0

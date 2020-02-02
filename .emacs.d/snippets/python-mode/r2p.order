@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.order
+# key: order
+# --
+np.argsort(${1:x})$0
