@@ -2,5 +2,5 @@
 # name: r2p.t
 # key: t
 # --
-${1:tX} = np.transpose(${2:X})
+np.transpose(${1:X})
 $0

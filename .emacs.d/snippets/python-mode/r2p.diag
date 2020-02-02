@@ -2,6 +2,5 @@
 # name: r2p.diag
 # key: diag
 # --
-${1:X} = np.identity(${2:n})
-${3:d} = np.diagonal($1)
+np.diagonal(${1:matrix})
 $0

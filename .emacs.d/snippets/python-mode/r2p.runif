@@ -2,5 +2,5 @@
 # name: r2p.runif
 # key: runif
 # --
-${1:x} = sp.random.uniform(0,1,${2:n})
+sp.random.uniform(0,1,${2:n})
 $0

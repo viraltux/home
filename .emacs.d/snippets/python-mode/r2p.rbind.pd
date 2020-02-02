@@ -2,5 +2,5 @@
 # name: r2p.rbind.pd
 # key: rbind.pd
 # --
-${1:X} = pd.concat([${2:x0,x1,...}],0)
+pd.concat([${1:x0,x1,...}],0)
 $0

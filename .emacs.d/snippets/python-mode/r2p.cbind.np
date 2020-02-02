@@ -2,5 +2,5 @@
 # name: r2p.cbind.np
 # key: cbind.np
 # --
-${1:X} = np.column_stack((${2:x0,x1,...}))
+np.column_stack((${1:x0,x1,...}))
 $0

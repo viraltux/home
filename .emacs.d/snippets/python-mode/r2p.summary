@@ -2,5 +2,5 @@
 # name: r2p.summary
 # key: summary
 # --
-${1:sx} = sp.stats.describe(${2:x})
+sp.stats.describe(${1:x})
 $0

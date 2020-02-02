@@ -2,5 +2,5 @@
 # name: r2p.sample
 # key: sample
 # --
-${1:x} = np.random.choice(range(${2:min}, ${3:max}+1), size=$3, replace=${4:False}, p=${5:None})
+np.random.choice(range(${1:min}, ${2:max}+1), size=$2, replace=${3:False}, p=${4:None})
 $0

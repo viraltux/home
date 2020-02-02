@@ -2,5 +2,5 @@
 # name: r2p.rbinom
 # key: rbinom
 # --
-${1:x} = sp.random.binomial(${2:size},${3:p},${4:n})
+sp.random.binomial(${1:size},${2:p},${3:n})
 $0

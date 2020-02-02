@@ -2,5 +2,5 @@
 # name: r2p.which
 # key: which
 # --
-${1:idx} = np.where(${2:x}==${3:value})
+np.where(${1:x}==${2:value})
 $0

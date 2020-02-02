@@ -2,5 +2,5 @@
 # name: r2p.vector
 # key: c
 # --
-${1:x} = np.array([${2:v1,v2,...}])
+np.array([${1:v1,v2,...}])
 $0
