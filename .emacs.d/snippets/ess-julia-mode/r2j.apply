@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.apply
+# key: apply
+# --
+mapslices(${1:f},${2:X},dims=[${3:1,2,...}])$0

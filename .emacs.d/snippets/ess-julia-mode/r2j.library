@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: r2j.library
+# key: library	
+# --
+using Plots
+using DataFrames
+using LinearAlgebra
+using Random
+using Distributions
+using StatsBase
+using FreqTables
+using HypothesisTests
+using GLM
+using Optim
+using Measures
+using TimeSeries
+using TSAnalysis
+using JuMP
+using Clustering
+using RCall
+
+$0

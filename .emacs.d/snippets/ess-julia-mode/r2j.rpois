@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.rpois
+# key: rpois
+# --
+rand(Poisson(${1:mean}),${2:n})$0

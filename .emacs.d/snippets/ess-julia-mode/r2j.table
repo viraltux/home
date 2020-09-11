@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.table
+# key: table
+# --
+freqtable(${2:x},${3:y})$0

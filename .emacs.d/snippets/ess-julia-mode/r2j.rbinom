@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.rbinom
+# key: rbinom
+# --
+rand(Binomial(${1:size},${2:p}),${3:n})$0

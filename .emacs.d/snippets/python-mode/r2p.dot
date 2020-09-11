@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.dot
+# key: dot
+# --
+np.dot(${1:x},${2:y})$0

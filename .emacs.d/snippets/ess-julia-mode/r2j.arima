@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: r2j.arima
+# key: arima
+# --
+using TSAnalysis
+
+arima_settings = ARIMASettings({$1:X}, {$2:d}, {$3:p}, {$4:q});
+
+arima_out = arima(arima_settings, NelderMead(), Optim.Options(iterations=10000, f_tol=1e-2, x_tol=1e-2, g_tol=1e-2, show_trace=true, show_every=500));
+
+max_hz = {$5:n_steps};
+fc = forecast(arima_out, max_hz, arima_settings);
+
+$0

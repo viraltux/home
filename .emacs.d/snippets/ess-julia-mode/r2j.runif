@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.runif
+# key: runif
+# --
+rand(Uniform(${1:a},${2:b}),${3:n})$0

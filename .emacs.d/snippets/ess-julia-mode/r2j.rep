@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: r2j.rep
+# key: rep
+# --
+repeat([${1:x1,x2,...}],inner=${2:n})
+repeat([$1],outer=$2)
+vcat(fill.([$1],[${3:r1,r2,...}])...)$0

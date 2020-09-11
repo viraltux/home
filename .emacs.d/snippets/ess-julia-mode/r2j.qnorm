@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2j.qnorm
+# key: qnorm
+# --
+ccdf(Normal(${1:mean,${2:sd}),${3:x})$0
+$0

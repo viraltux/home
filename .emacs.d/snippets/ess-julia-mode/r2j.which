@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.which
+# key: which
+# --
+findall(x -> x ${1:==} ${2:v} ,${3:X})$0

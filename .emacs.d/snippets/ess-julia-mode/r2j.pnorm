@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.pnorm
+# key: pnorm
+# --
+cdf(Normal(${1:mean,${2:sd}),${3:x})$0

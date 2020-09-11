@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.dot
+# key: dot
+# --
+dot(${1:x},${2:y}) # x⋅y \cdot TAB$0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2j.seq
+# key: seq
+# --
+Array(${1:from}:${2:by}:${3:to})
+Array(LinRange($1,$3,${4:length.out}))$0

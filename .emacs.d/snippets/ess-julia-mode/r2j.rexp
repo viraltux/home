@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.rexp
+# key: rexp
+# --
+rand(Exponential(${1:mean}),${2:n})$0

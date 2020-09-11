@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.round
+# key: round
+# --
+round(${1:x},digits=${2:2})$0

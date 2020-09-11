@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: r2j.kmeans
+# key: kmeans
+# --
+using Clustering
+
+# cluster X into 20 clusters using K-means
+R = kmeans(X, ${1:n_clusters}; maxiter=${2:200}, display=:iter)
+
+@assert nclusters(R) == 20 # verify the number of clusters
+
+a = assignments(R) # get the assignments of points to clusters
+c = counts(R) # get the cluster sizes
+M = R.centers # get the cluster centers
+
+$0

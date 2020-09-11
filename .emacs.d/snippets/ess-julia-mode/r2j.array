@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: r2j.array
+# key: array
+# --
+Array{{$1:Float64}}({$2:undef}, {$3:10,10,10})
+Array{Float64,dims}
+Array{Union{Missing, String}}(missing, dims)
+$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.rbind
+# key: rbind
+# --
+vcat(${1:x0,x1,...})$0

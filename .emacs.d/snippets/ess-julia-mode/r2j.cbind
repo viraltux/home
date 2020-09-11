@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.cbind
+# key: cbind
+# --
+hcat(${1:x0,x1,...})$0

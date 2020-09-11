@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.set.seed
+# key: set.seed
+# --
+Random.seed!($1)$0

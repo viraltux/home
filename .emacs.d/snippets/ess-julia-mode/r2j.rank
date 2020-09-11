@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: r2p.rank
+# name: r2j.rank
 # key: rank
 # --
-sps.rankdata(${1:x})$0
+tiedrank(${1:x})$0

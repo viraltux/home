@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: r2j.abline
+# key: abline
+# --
+vline!({$1:x1,x2,...})
+hline!({$1:y1,y2,...})$0

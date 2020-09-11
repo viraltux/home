@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2j.summary
+# key: summary
+# --
+describe(${1:x})$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: r2p.matrix
+# key: matrix
+# --
+Matrix{{$1:Int}}({$2:undef}, {{$3:d1}, {$4:d2})$0
