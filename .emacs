@@ -12,7 +12,7 @@
  '(company-minimum-prefix-length 2)
  '(package-selected-packages
    (quote
-    (flymake ac-inf-ruby company-inf-ruby magit yasnippet helm ess company beacon use-package)))
+    (julia-mode julia-repl julia-shell flymake ac-inf-ruby company-inf-ruby magit yasnippet helm ess company beacon use-package)))
  '(safe-local-variable-values
    (quote
     ((eval switch-to-buffer "Chapters")
