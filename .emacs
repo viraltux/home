@@ -11,11 +11,9 @@
  ;; If there is more than one, they won't work right.
  '(company-minimum-prefix-length 2)
  '(package-selected-packages
-   (quote
-    (julia-mode julia-repl julia-shell flymake ac-inf-ruby company-inf-ruby magit yasnippet helm ess company beacon use-package)))
+   '(julia-mode julia-repl julia-shell flymake ac-inf-ruby company-inf-ruby magit yasnippet helm ess company beacon use-package))
  '(safe-local-variable-values
-   (quote
-    ((eval switch-to-buffer "Chapters")
+   '((eval switch-to-buffer "Chapters")
      (eval clone-indirect-buffer "Chapters" nil)
      (eval other-window 1)
      (eval switch-to-buffer
@@ -27,7 +25,7 @@
      (eval split-window-right 50)
      (eval switch-to-buffer "Texto")
      (eval clone-indirect-buffer "Texto" nil)
-     (eval find-file "chailatte.org")))))
+     (eval find-file "chailatte.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

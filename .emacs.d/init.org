@@ -500,6 +500,7 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
   
 #+BEGIN_SRC emacs-lisp
 (setq inferior-julia-program-name "~/apps/julia-1.4.2/bin/julia")
+(add-to-list 'auto-mode-alist '("\\.jl\\'" . ess-julia-mode))
 #+END_SRC
 
 * Python
