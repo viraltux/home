@@ -2,4 +2,4 @@
 # name: r2j.sample
 # key: sample
 # --
-sample([${1:x1} ${2:x2}], Weights([${3:w1},${4:w2}]), ${5:size}, replace=true, ordered=false)$0
+StatsBase.sample([${1:x1} ${2:x2}], Weights([${3:w1},${4:w2}]), ${5:size}, replace=true, ordered=false)$0

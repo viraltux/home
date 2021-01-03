@@ -11,7 +11,7 @@
  ;; If there is more than one, they won't work right.
  '(company-minimum-prefix-length 2)
  '(package-selected-packages
-   '(julia-mode julia-repl julia-shell flymake ac-inf-ruby company-inf-ruby magit yasnippet helm ess company beacon use-package))
+   '(eterm-256color julia-mode julia-repl julia-shell flymake ac-inf-ruby company-inf-ruby magit yasnippet helm company beacon use-package))
  '(safe-local-variable-values
    '((eval switch-to-buffer "Chapters")
      (eval clone-indirect-buffer "Chapters" nil)

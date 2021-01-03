@@ -1,22 +1,82 @@
 # -*- mode: snippet -*-
 # name: r2j.library
-# key: library	
+# key: library		
 # --
-using Plots
+
+
+## System
+using PackageCompiler
+using PkgTemplates
+using Revise
+using OhMyREPL
+using Documenter
+
+## Interfaces
+using PyCall
+using RCall
+
+## I/O
+using CSV
+using Latexify
+using HDF5
+using FileIO
+using Genie
+using Weave
+using Interact
+using ProgressMeter
+using DrWatson
+
+## Data
+using MLDatasets
+using RDatasets
 using DataFrames
-using LinearAlgebra
+using DataStructures
+using Images
+using JuliaDB
+using Query
+
+## Machine Learning
+using Clustering
+using DecisionTree
+using XGBoost
+
+## Statistics
 using Random
-using Distributions
 using StatsBase
 using FreqTables
 using HypothesisTests
+using Distributions
+using OnlineStats
 using GLM
-using Optim
+using GLMNet
+using Gen
+using Turing
 using Measures
+using Measurements
 using TimeSeries
 using TSAnalysis
+
+## Mathematics
+using DifferentialEquations
+using LightGraphs
+using ModelingToolkit
+using OrdinaryDiffEq
+using LinearAlgebra
+
+## Graphics
+using Plots
+using StatsPlots
+using UnicodePlots
+using Gadfly
+using Makie
+using UMAP
+
+## Optimization
+using Optim
+using BlackBoxOptim
+using Convex
 using JuMP
-using Clustering
-using RCall
+
+########################################
 
 $0

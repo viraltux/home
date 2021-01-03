@@ -499,8 +499,20 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 * Julia
   
 #+BEGIN_SRC emacs-lisp
-(setq inferior-julia-program-name "~/apps/julia-1.4.2/bin/julia")
-(add-to-list 'auto-mode-alist '("\\.jl\\'" . ess-julia-mode))
+;; https://github.com/tpapp/julia-repl
+
+(require 'eterm-256color)
+(set-language-environment "UTF-8")
+
+(setq path-to-julia-repl "~/apps/julia-1.5.3/bin/julia")
+(add-to-list 'load-path path-to-julia-repl)
+(require 'julia-repl)
+(add-hook 'julia-mode-hook 'julia-repl-mode) 
+
+;; (setenv "JULIA_NUM_THREADS" "4")
+
+;; (setq inferior-julia-program-name "~/apps/julia-1.5.3/bin/julia")
+;; (add-to-list 'auto-mode-alist '("\\.jl\\'" . ess-julia-mode))
 #+END_SRC
 
 * Python
