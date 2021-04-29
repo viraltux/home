@@ -223,7 +223,7 @@
    (cond
    ((string-equal system-type "windows-nt") (progn (setq org-directory "~/workspace/org")))
    ((string-equal system-type "darwin") (progn (message "Set org-directory for Mac OS X")))
-   ((string-equal system-type "gnu/linux") (progn (setq org-directory "~/workspace/org"))))
+   ((string-equal system-type "gnu/linux") (progn (setq org-directory "~/Dropbox/workspace/org"))))
 
    (add-hook 'org-mode-hook (global-visual-line-mode t))
   #+END_SRC
@@ -240,6 +240,10 @@
 
 ** Agenda
    #+BEGIN_SRC emacs-lisp
+
+   ;; Adding all org files in folder to agenda-list
+   (setq org-agenda-files '("~/Dropbox/workspace/org"))
+
    ;; (setq org-icalendar-timezone "Europe/Prague")
    ;; C-h v org-icalendar-use-UTC-date-time for details
    ;; Using UTC format is globally is advice since many calendar apps can
@@ -504,8 +508,8 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 (require 'eterm-256color)
 (set-language-environment "UTF-8")
 
-(setq path-to-julia-repl "~/apps/julia-1.5.3/bin/julia")
-(add-to-list 'load-path path-to-julia-repl)
+;; (setq path-to-julia-repl "~/apps/julia-1.6.0/bin/julia")
+;; (add-to-list 'load-path path-to-julia-repl)
 (require 'julia-repl)
 (add-hook 'julia-mode-hook 'julia-repl-mode) 
 

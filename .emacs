@@ -10,10 +10,17 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-minimum-prefix-length 2)
+ '(org-agenda-files '("~/Dropbox/workspace/org/agenda.org"))
  '(package-selected-packages
-   '(eterm-256color julia-mode julia-repl julia-shell flymake ac-inf-ruby company-inf-ruby magit yasnippet helm company beacon use-package))
+   '(markdown-mode eterm-256color julia-mode julia-repl julia-shell flymake ac-inf-ruby company-inf-ruby magit yasnippet helm company beacon use-package))
  '(safe-local-variable-values
-   '((eval switch-to-buffer "Chapters")
+   '((eval visual-line-mode t)
+     (eval define-key org-mode-map
+	   (kbd "C-c C-e")
+	   nil)
+     (eval load-file
+	   (concat org-directory "/latex-templates/blue-ruin.el"))
+     (eval switch-to-buffer "Chapters")
      (eval clone-indirect-buffer "Chapters" nil)
      (eval other-window 1)
      (eval switch-to-buffer
