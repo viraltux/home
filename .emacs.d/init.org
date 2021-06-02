@@ -8,18 +8,21 @@
    The .emacs file at ~ will trigger the load and conversion of the init.org file and should contain the code below in the begginning.
    Further lines will be added automatically by other packages.
 
-   #+BEGIN_SRC 
-   (setq user-emacs-directory (expand-file-name "~/.emacs.d/"))
+   #+BEGIN_SRC
+     (setq user-emacs-directory (expand-file-name "~/.emacs.d/"))
 
-   (require 'org)
-   (org-babel-load-file (expand-file-name (concat user-emacs-directory "init.org")))
+     (require 'org)
+     (org-babel-load-file (expand-file-name (concat user-emacs-directory "init.org")))
    #+END_SRC
-  
+   
 ** Repositories
  Instructions at https://stable.melpa.org/#/getting-started
 
 
  #+BEGIN_SRC emacs-lisp
+ ;; Solves connection problems you can also try "emacs --insecure"
+ (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ; list the packages you want
 (setq package-list '(use-package beacon company ess helm yasnippet magit))
 
