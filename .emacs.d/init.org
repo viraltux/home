@@ -18,26 +18,36 @@
 ** Repositories
  Instructions at https://stable.melpa.org/#/getting-started
 
-
  #+BEGIN_SRC emacs-lisp
+ (require 'package)
+ (package-initialize)
+
  ;; Solves connection problems you can also try "emacs --insecure"
  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
-; list the packages you want
-(setq package-list '(use-package beacon company ess helm yasnippet magit))
 
-; list the repositories containing them
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+ ;; list the repositories containing them
+ (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                          ("melpa" . "http://melpa.org/packages/")))
+ 
+ ;; pre-install packages
+ (defvar my-packages '(use-package beacon company ess helm yasnippet magit eterm-256color ispell company julia-repl))
 
-; fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
+ (defvar modi/missing-packages '()
+ "List populated at each startup that contains the list of packages that need to be installed.")
 
-; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+ (dolist (p my-packages)
+ (when (not (package-installed-p p))
+ (add-to-list 'modi/missing-packages p)))
+
+ (when modi/missing-packages
+ (message "Emacs is now refreshing its package database...")
+ (package-refresh-contents)
+ 
+ (dolist (p modi/missing-packages)
+ (message "Installing `%s'.."p)
+ (package-install p))
+ (setq modi/missing-packages '()))
 
  #+END_SRC
 
@@ -528,8 +538,8 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 #+BEGIN_SRC emacs-lisp
 (if (file-exists-p "/databricks/conda/envs/databricks-ml-gpu/bin/python")
     (setq python-shell-interpreter "/databricks/conda/envs/databricks-ml-gpu/bin/python"))
-(if (file-exists-p "/usr/bin/python3")
-    (setq python-shell-interpreter "/usr/bin/python3"))
+(if (file-exists-p "/usr/local/bin/python")
+    (setq python-shell-interpreter "/usr/local/bin/python"))
 ;;(setq python-shell-interpreter-args "-m IPython --simple-prompt -i")
 #+END_SRC
 
