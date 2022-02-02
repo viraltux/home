@@ -350,12 +350,20 @@ To use this type <RR and then TAB. This creates an R block for graphics that are
 *** python
 
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'org-structure-template-alist
-'("p" "#+begin_src python :results output :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
+(elpy-enable)
 
+(use-package pyvenv
+        :ensure t
+        :init
+        (setenv "WORKON_HOME" "/home/fran/miniconda3/envs")
+        (pyvenv-mode 1)
+        (pyvenv-tracking-mode 1))
 
-(add-to-list 'org-structure-template-alist
-'("P" "#+begin_src python :results output :session *python* :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
+(pyvenv-mode 1)
+
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 #+END_SRC
 
